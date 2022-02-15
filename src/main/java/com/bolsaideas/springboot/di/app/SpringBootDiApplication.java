@@ -8,6 +8,7 @@ public class SpringBootDiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDiApplication.class, args);
+		System.out.println("Iniciado");
 	}
 
 }
