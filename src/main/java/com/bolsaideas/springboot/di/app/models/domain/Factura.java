@@ -19,7 +19,7 @@ public class Factura {
 	 * No haría falta el qualifier ya que solo hay uno
 	 */
 	@Autowired
-	@Qualifier("itemsFactura")
+	@Qualifier("itemsFacturaOficina")
 	private List<ItemFactura> items;
 
 	public String getDescripcion() {
