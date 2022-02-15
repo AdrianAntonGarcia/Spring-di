@@ -1,4 +1,4 @@
-package com.bolsaideas.springboot.di.models.service;
+package com.bolsaideas.springboot.di.app.models.service;
 
 public class MiServicio {
 	public String operacion() {
