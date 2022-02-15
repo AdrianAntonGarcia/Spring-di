@@ -2,6 +2,9 @@ package com.bolsaideas.springboot.di.app.models.domain;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,12 +18,27 @@ public class Factura {
 	@Autowired
 	private Cliente cliente;
 
-	/**
-	 * No haría falta el qualifier ya que solo hay uno
-	 */
 	@Autowired
 	@Qualifier("itemsFacturaOficina")
 	private List<ItemFactura> items;
+
+	/**
+	 * Se ejecuta después de que se haya construido el objeto y se hayan inyectado
+	 * las dependencias
+	 */
+	@PostConstruct
+	public void inicializar() {
+		cliente.setNombre(cliente.getNombre().concat(" ").concat("Adri"));
+		descripcion = descripcion.concat(" del cliente").concat(cliente.getNombre());
+	}
+
+	/**
+	 * Se ejecuta cuándo se destruye el componente
+	 */
+	@PreDestroy
+	public void destruir() {
+		System.out.println("Factura destruida: ".concat(descripcion));
+	}
 
 	public String getDescripcion() {
 		return descripcion;
