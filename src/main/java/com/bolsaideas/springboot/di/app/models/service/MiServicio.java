@@ -4,7 +4,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * Le damos un nombre al servicio para diferenciar entre las diferentes
- * implementaciones de la interfaz IServicio
+ * implementaciones de la interfaz IServicio Tenemos que tener siempre un
+ * constructor sin parámetros (BEAN)
  * 
  * @author Adrián
  *
