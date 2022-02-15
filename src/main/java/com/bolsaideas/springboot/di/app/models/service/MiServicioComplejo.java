@@ -1,8 +1,5 @@
 package com.bolsaideas.springboot.di.app.models.service;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
-
 /**
  * Le damos un nombre al servicio para diferenciar entre las diferentes
  * implementaciones de la interfaz IServicio Tenemos que tener siempre un
@@ -13,8 +10,8 @@ import org.springframework.stereotype.Service;
  * @author Adrián
  *
  */
-@Service("miServicioComplejo")
-@Primary
+//@Service("miServicioComplejo")
+//@Primary
 public class MiServicioComplejo implements IServicio {
 
 	@Override
