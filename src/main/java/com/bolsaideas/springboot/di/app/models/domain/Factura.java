@@ -3,6 +3,7 @@ package com.bolsaideas.springboot.di.app.models.domain;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,11 @@ public class Factura {
 	@Autowired
 	private Cliente cliente;
 
+	/**
+	 * No haría falta el qualifier ya que solo hay uno
+	 */
 	@Autowired
+	@Qualifier("itemsFactura")
 	private List<ItemFactura> items;
 
 	public String getDescripcion() {
