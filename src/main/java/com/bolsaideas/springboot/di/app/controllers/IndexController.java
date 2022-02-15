@@ -1,6 +1,7 @@
 package com.bolsaideas.springboot.di.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,12 @@ public class IndexController {
 
 	/**
 	 * Cuándo inyectamos por constructor podemos hasta quitar el autowired
+	 * Con @qualifier decidimos que implementación en específico usar.
 	 * 
 	 * @param servicio
 	 */
 	@Autowired
-	public IndexController(IServicio servicio) {
+	public IndexController(@Qualifier("miServicioSimple") IServicio servicio) {
 		this.servicio = servicio;
 	}
 

@@ -15,6 +15,6 @@ public class MiServicio implements IServicio {
 
 	@Override
 	public String operacion() {
-		return "Ejecutando algún proceso importante...";
+		return "Ejecutando algún proceso importante simple...";
 	}
 }
